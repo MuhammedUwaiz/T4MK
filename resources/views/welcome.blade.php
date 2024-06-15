@@ -18,7 +18,7 @@ body {
       font-family: Arial, sans-serif;
     }
     .bg-hero-image {
-      background: url('/Images/hero-image.jpg') no-repeat center center;
+      background: url('/hero-image.jpg') no-repeat center center;
       background-size: cover;
       height: 100vh;
       width: 100%;
@@ -278,8 +278,7 @@ body {
         <div class="row header">
             <div class="col-9 col-md-6 p-3 ps-5">
                 
-            <img src="\Images\T4MK-LOGO-ORIGINAL.png" class="img-fluid img-custom">
-
+            <img src="{{ asset('T4MK-LOGO-ORIGINAL.png') }}" class="img-fluid img-custom">
 
             </div>
 
@@ -355,7 +354,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
   <div class="col-md-6">
     <div class="card">
-      <img src="Images/Innovation-is-Just-Good-Product-Management-Blog-1-scaled.jpg"
+    <img src="{{ asset('Innovate for Good.jpeg') }}" 
        class="card-img-top" alt="">
       <div class="card-body">
         <h4 class="card-title">Innovate for Good</h4>
@@ -368,7 +367,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
   <div class="col-md-6">
     <div class="card">
-      <img src="/Images/nm-2.jpg"
+    <img src="{{ asset('Collaborative Culture.jpg') }}" 
        class="card-img-top" alt="" >
       <div class="card-body">
         <h4 class="card-title">Collaborative Culture</h4>
@@ -389,7 +388,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
 <div class="col-md-6">
     <div class="card">
-      <img src="Images/Combining-Cutting-Edge-Technologies-The-Power-of-AI-powered-Voice-Biometrics-and-Blockchain.png"
+    <img src="{{ asset('Cutting-Edge Technology.png') }}" 
        class="card-img-top" alt="" >
       <div class="card-body">
         <h4 class="card-title ">Cutting-Edge Technology</h4>
@@ -402,7 +401,8 @@ Are you passionate about making a real difference through technology? Do you thr
 
   <div class="col-md-6">
     <div class="card">
-      <img src="/Images/20190530201140-GettyImages-953171960.jpeg"
+      
+      <img src="{{ asset('Growth Opportunities.jpeg') }}" 
        class="card-img-top" alt="" >
       <div class="card-body">
         <h4 class="card-title">Growth Opportunities</h4>
@@ -422,7 +422,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
 <div class="col-md-6 ">
     <div class="card">
-      <img src="/Images/AdobeStock_442934125.jpeg"
+    <img src="{{ asset('Inclusive Workplace.jpeg') }}" 
        class="card-img-top" alt="" >
       <div class="card-body">
         <h4 class="card-title ">Inclusive Workplace</h4>
@@ -437,12 +437,11 @@ Are you passionate about making a real difference through technology? Do you thr
 
   <div class="col-md-6">
     <div class="card">
-      <img src="/Images/What-makes-a-good-working-environment-for-researchers.png"
+    <img src="{{ asset('good environment.png') }}"
        class="card-img-top" alt="" >
       <div class="card-body">
         <h4 class="card-title">Team Environment</h4>
-        <p class="card-text">Join a supportive community where teamwork and personal growth go hand in hand.</p>
-        
+        <p class="card-text">Join a supportive community where teamwork and personal growth go hand in hand.</p>    
       </div>
     </div>
   </div>
