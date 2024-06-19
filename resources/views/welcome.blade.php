@@ -7,6 +7,8 @@
     <link rel="icon" type="image/x-icon" href="IMG_20231124_170848_845.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
 
 
 
@@ -21,7 +23,7 @@ body {
     .bg-hero-image {
     background: url("{{ asset('hero-image.jpg') }}");
     background-size: cover; /* Ensures the background image covers the entire container */
-    height: 100vh; /* Sets the height of the container to 100% of the viewport height */
+    height: 95vh; /* Sets the height of the container to 100% of the viewport height */
     width: 100%; /* Ensures the container fills the viewport width */
     justify-content: center; /* Centers items horizontally */
     align-items: center; /* Centers items vertically */
@@ -96,9 +98,10 @@ body {
     width: auto;
    
 }
+
 .WHYT4MK{
     text-align: center;
-    margin-bottom: -35px;
+    margin-bottom: 20px;
     font-weight: 500;
 }
 
@@ -216,10 +219,7 @@ body {
    
 }
 
-.WHYT4MK{
-  margin-top: -1rem;
-  padding-bottom: 2rem;
-}
+
 
 .card {
     margin-top: 2rem;
@@ -228,6 +228,11 @@ body {
 .custom-padding-top {
     padding-top: 0.1rem; 
 }
+
+.WHYT4MK{
+    margin-bottom: -15px;
+}
+
 
 
 
@@ -250,6 +255,10 @@ body {
         position: relative;
         top: -15px;
     }
+
+    .content-section {
+     margin-top: -15px;
+}
 
     .hero-content h1 {
         font-weight: 500;
