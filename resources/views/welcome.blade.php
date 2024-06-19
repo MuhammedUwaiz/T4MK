@@ -17,44 +17,63 @@ body {
       margin: 0;
       font-family: Arial, sans-serif;
     }
+
     .bg-hero-image {
-      background: url('/hero-image.jpg') no-repeat center center;
-      background-size: cover;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .text-white {
+    background: url("{{ asset('hero-image.jpg') }}");
+    background-size: cover; /* Ensures the background image covers the entire container */
+    height: 100vh; /* Sets the height of the container to 100% of the viewport height */
+    width: 100%; /* Ensures the container fills the viewport width */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+    overflow: hidden; /* Prevents content from overflowing the container */
+    position: relative;
+    left: 5px;
+    --bs-gutter-x: 0rem;
+    margin-left:-5px;
+}
+
+
+
+
+
+
+
+
+.text-white {
       color: white;
     }
-    .text-center {
+
+.text-center {
       text-align: center;
     }
-    .hero-content {
+
+.hero-content {
         max-width: 1000px;
     margin: auto;
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     }
-    .hero-content h1 {
+
+.hero-content h1 {
         font-weight: 600;
         font-size: 3em;
         margin-bottom: 0.5em;
     }
-    .hero-content h2 {
+
+.hero-content h2 {
         font-weight: 600;
       font-size: 2em;
       margin-bottom: 1em;
     }
-    .hero-content p {
+
+.hero-content p {
         font-weight: 600;
       font-size: 1.2em;
       margin-bottom: 2em;
     }
-    .hero-content button {
+
+.hero-content button {
       background-color: #FFA500;
       border: none;
       padding: 0.75em 1.5em;
@@ -64,34 +83,37 @@ body {
       cursor: pointer;
       font-weight: 600;
     }
-    .hero-content button:hover {
+
+.hero-content button:hover {
       background-color: #e59400;
     }
     
-    .content-section {
+.content-section {
     padding: 40px 20px;
-    background-color: #fff;
     text-align: center;
     font-weight: 400;
+    background-color: aliceblue;
+    width: auto;
    
 }
-
 .WHYT4MK{
     text-align: center;
-    padding-bottom: 5rem;
+    margin-bottom: -35px;
     font-weight: 500;
 }
 
+
 .header {
     background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
-    width: 100%;
+    width: auto;
    
 }
 
-.content-section{
-    background-color: aliceblue;
-    width: 99%;
+.box-sizing
+{
+  border:none;
 }
+
 
 
 .footer {
@@ -99,7 +121,7 @@ body {
     color: #fff;
     padding: 20px 0;
     text-align: center;
-    width: 99%;
+    width: auto;
 }
 
 .footer .cta {
@@ -120,6 +142,9 @@ body {
 
 .contact{
     font-weight: 800;
+    text-align: center;
+    padding-top: 0.5rem;
+    width: auto;
    
 }
 
@@ -129,16 +154,17 @@ body {
 
     #Experience-Section {
     background-color: #f0f0f0 !important;
-    width: 99%;
+   
 }
 
 .card {
     text-align: center;
-    padding: 1rem;
+    padding: 2rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width:auto;
     height: 400px;
+    margin-top: 0rem;
 }
 
 .card:hover {
@@ -152,6 +178,10 @@ body {
 
 .card-title {
     font-weight: bold; 
+}
+
+.custom-padding-top {
+    padding-top: 3rem; 
 }
 
 
@@ -177,6 +207,7 @@ body {
 }
 
 
+
 @media only screen and (max-width: 767px) {
 
     .card {
@@ -184,6 +215,25 @@ body {
    margin-top: 50px;
    
 }
+
+.WHYT4MK{
+  margin-top: -1rem;
+  padding-bottom: 2rem;
+}
+
+.card {
+    margin-top: 2rem;
+}
+
+.custom-padding-top {
+    padding-top: 0.1rem; 
+}
+
+
+
+
+
+
 
 }
 
@@ -235,18 +285,16 @@ body {
    
 }
 
-.content-section{
-    width: 97.5%;
-}
 
-#Experience-Section {
-    width: 97.5%;
-}
 
-.footer {
+
+.header {
    
-    width: 97.5%;
+    width: auto;
+   
 }
+
+
 
 
 
@@ -381,7 +429,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
 
 
-<div class="row pt-5">
+<div class="row custom-padding-top">
 
 
 
@@ -416,7 +464,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
 </div>
 
-<div class="row pt-5">
+<div class="row custom-padding-top">
 
 
 
@@ -456,7 +504,7 @@ Are you passionate about making a real difference through technology? Do you thr
 
     </section>
       <section class="contact" id="Contact me-Section">
-<div class="container">
+
   <h1 class="text-center ">Contact us</h1>
   <div class="row">
     <div class="col-md-12">
@@ -464,7 +512,6 @@ Are you passionate about making a real difference through technology? Do you thr
     
   </div>
   </div>
-</div>
       </section>
 
       <footer class="footer" id="contact">
