@@ -107,8 +107,8 @@ body {
 
 
 .header {
-    background-image: linear-gradient(to top, #dad4ec 0%, #dad4ec 1%, #f3e7e9 100%);
-    width: auto;
+  background-color: white;
+  width: auto;
    
 }
 
@@ -199,13 +199,16 @@ body {
     }
 
     .card {
-    
+    text-align: center;
     padding: 0rem;
-    margin-left: -30px;
+    margin-left: -25px;
     margin-top: 50px;
     width: 119%;
+    height: 340px;
     
 }
+
+
 
 }
 
@@ -295,26 +298,118 @@ body {
 }
 
 
-
-
 .header {
    
     width: auto;
    
 }
 
+.navbar {
+    top: 12px; 
+  }
 
+  .menus {
+  top: 54px;
+}
 
+}
 
+@media (min-width: 991px) {
+  .navbar {
+    top: 24px;
+  }
 
-   
-
-
+  .menus {
+  top: 64px;
+}
 
 }
 
 
     
+
+
+.navbar {
+  position: fixed;
+  padding: 10px;
+  color: white;
+  right: 20px;
+  
+}
+
+.menus-icon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px; /* Adjust height as needed */
+}
+
+.bar {
+  width: 35px; /* Adjust width as needed */
+  height: 3px; /* Adjust height as needed */
+  background-color: black;
+  transition: 0.4s;
+}
+
+.menus-icon.active #bar1 {
+  transform: rotate(-45deg) translate(-6px, 7px);
+}
+
+.menus-icon.active #bar2 {
+  opacity: 0;
+}
+
+.menus-icon.active #bar3 {
+  transform: rotate(45deg) translate(-6px, -7px);
+}
+
+
+
+.menus {
+  display: none;
+  position: absolute;
+  background-color: white;
+  padding: 10px;
+  left: -46px;
+  width: 121px;
+  height: 130px;
+  z-index: 1;
+}
+
+.menus.active {
+  display: block;
+}
+
+.texts {
+  padding: 21px;
+}
+
+.Home {
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  left: 38px;
+}
+
+.Mission {
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  top: 50px;
+  left: 34px;
+}
+
+.Contact {
+  color: black;
+  text-decoration: none;
+  position: absolute;
+  top: 90px;
+  left: 34px;
+}
+
+
 
 
 
@@ -340,9 +435,56 @@ body {
             </div>
 
             <div class="col-3 col-md-6 my-auto">
+
+
+
+
+
+
+
+
                 
 
-              <nav class="navbar navbar-expand-lg bg-aliceblue">
+            <div class="navbar">
+    <div class="menus-icon" id="menus-icon" onclick="toggleMenu()">
+        <div class="bar" id="bar1"></div>
+        <div class="bar" id="bar2"></div>
+        <div class="bar" id="bar3"></div>
+    </div>
+    <div class="menus" id="menus">
+        <div class="texts">
+            <!-- Your menu items will go here -->
+            <a href="#Home-Section" class="Home">Home</a>
+            <a href="#Experience-Section" class="Mission">Mission</a>
+            <a href="#Contact me-Section" class="Contact">Contact</a>
+            <!-- Add more items as needed -->
+        </div>
+    </div>
+</div>
+
+                
+
+
+
+<script>
+   
+  function toggleMenu() {
+  var menuIcon = document.getElementById("menus-icon");
+  var menu = document.getElementById("menus");
+  
+  menuIcon.classList.toggle("active");
+  menu.classList.toggle("active");
+}
+
+
+  </script>
+
+
+
+
+
+
+ <!--  <nav class="navbar navbar-expand-lg bg-aliceblue">
                 <div class="container-fluid">
                     <button class="navbar-toggler navbar  ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -362,8 +504,21 @@ body {
                         </ul>
                     </div>
                 </div>
-              </nav>
+              </nav>   -->
 
+                
+              
+
+
+
+
+
+
+
+
+
+
+              
             </div>
         </div>
     </header>
@@ -374,10 +529,28 @@ body {
         <h1>Welcome to T4MK</h1>
         <h2>Transforming Lives Through Technology</h2>
         <p>At T4MK, we believe in the power of technology to make life easier and better for everyone. Our mission is to harness existing technologies and innovate new solutions that simplify daily tasks, enhance productivity, and improve the overall quality of life.</p>
-        <button>Join Our Mission</button>
+        <button onclick="scrollToSection()">Join Our Mission</button>
+      </div>
       </div>
     </div>
   </section>
+  
+
+  <script>
+   
+    function scrollToSection() {
+      const section = document.getElementById('Experience-Section');
+      const sectionPosition = section.getBoundingClientRect().top;
+      const offset = window.pageYOffset;
+      const scrollPosition = sectionPosition + offset;
+      
+      window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+
 
 
   <section id="mission" class="content-section">
