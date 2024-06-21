@@ -21,7 +21,7 @@ body {
     }
 
     .bg-hero-image {
-    background: url("{{ asset('hero-image.jpg') }}");
+    background: url("{{ asset('technology.jpg') }}");
     background-size: cover; /* Ensures the background image covers the entire container */
     height: 95vh; /* Sets the height of the container to 100% of the viewport height */
     width: 100%; /* Ensures the container fills the viewport width */
@@ -162,11 +162,11 @@ body {
 
 .card {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width:auto;
-    height: 400px;
+    height: 480px;
     margin-top: 0rem;
 }
 
@@ -176,7 +176,7 @@ body {
 }
 
 .card-img-top {
-    height: 15em;
+    height: 21em;
 }
 
 .card-title {
