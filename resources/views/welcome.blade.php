@@ -323,23 +323,22 @@ body {
     
 
 
-/* General styles for the navbar */
-
 
 .menus-icon {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    position: absolute;
+    right: 0px;
 }
 
-.menus-icon .bar {
+.bar {
     width: 30px;
     height: 3px;
     background-color: black;
     margin: 4px 0;
     transition: 0.4s;
-    position: relative;
-    bottom: 20px;
+    
 }
 
 .menus {
@@ -387,6 +386,7 @@ body {
     padding: 10px;
    position: absolute;
    right: 20px;
+   
     
 }
 
