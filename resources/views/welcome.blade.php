@@ -236,12 +236,9 @@ body {
     margin-bottom: -15px;
 }
 
-
-
-
-
-
-
+.FooterText-2 {
+    font-size: 12px;
+}
 
 }
 
@@ -305,12 +302,9 @@ body {
 }
 
 .navbar {
-    top: 12px; 
+    top: 26px; 
   }
 
-  .menus {
-  top: 54px;
-}
 
 }
 
@@ -329,31 +323,93 @@ body {
     
 
 
-.navbar {
-  position: fixed;
-  padding: 10px;
-  color: white;
-  right: 20px;
-  
-}
+/* General styles for the navbar */
+
 
 .menus-icon {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 20px; /* Adjust height as needed */
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
-.bar {
-  width: 35px; /* Adjust width as needed */
-  height: 3px; /* Adjust height as needed */
-  background-color: black;
-  transition: 0.4s;
+.menus-icon .bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+    position: relative;
+    bottom: 20px;
+}
+
+.menus {
+    display: flex;
+}
+
+
+@media screen and (max-width: 900px) {
+
+    .menus {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menus.active {
+        display: flex;
+    }
+
+    .menus-icon {
+        display: flex;
+    }
+
+
+    .Home {
+  top: 10px;
+  left: 38px;
+  color: white;
+}
+
+.Mission {
+  top: 50px;
+  left: 34px;
+}
+
+.Contact {
+  top: 90px;
+  left: 34px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+   position: absolute;
+   right: 20px;
+    
+}
+
+.texts {
+        top: 39px;
+        background-color: #eefbff;
+        padding: 6px;
+        border: 5px solid #ffffff;
+        border-radius: 0px;
+        position: absolute;
+        bottom: 21px;
+        right: -20px;
+        width: 134px;
+        height: 135px;
+    }
+
+
+  
+
 }
 
 .menus-icon.active #bar1 {
-  transform: rotate(-45deg) translate(-6px, 7px);
+  transform: rotate(45deg) translate(6px, 7px);
 }
 
 .menus-icon.active #bar2 {
@@ -361,65 +417,93 @@ body {
 }
 
 .menus-icon.active #bar3 {
-  transform: rotate(45deg) translate(-6px, -7px);
+  transform: rotate(-45deg) translate(8px, -10px);
 }
 
 
-
-.menus {
-  display: none;
-  position: absolute;
-  background-color: white;
-  padding: 10px;
-  left: -46px;
-  width: 121px;
-  height: 130px;
-  z-index: 1;
-}
-
-.menus.active {
-  display: block;
-}
-
-.texts {
-  padding: 21px;
-}
 
 .Home {
   color: black;
   text-decoration: none;
   position: absolute;
-  top: 10px;
-  left: 38px;
+  bottom: 21px;
+  right: 240px;
+  font-weight: 500;
 }
 
 .Mission {
   color: black;
   text-decoration: none;
   position: absolute;
-  top: 50px;
-  left: 34px;
+  bottom: 21px;
+  right: 140px;
+  font-weight: 500;
 }
 
 .Contact {
   color: black;
   text-decoration: none;
   position: absolute;
-  top: 90px;
-  left: 34px;
+  bottom: 21px;
+  right: 40px;
+  font-weight: 500;
+}
+
+
+.Footer-2 {
+    background-color: white;
+    padding: 1rem;
+    height: 66px;
+}
+
+.FooterText-2 {
+    text-align: center;
+    color: black;
+    font-size: 16px; /* Default font size */
+    padding-top: 3px;
+    font-weight: 600;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 540px) {
+    .FooterText-2 {
+     font-size: 14px;
+    }
+
+    .Footer-2 {
+    padding: 1rem;
+    height: 57px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+    .FooterText-2 {
+     font-size: 12px;
+    }
+
+    .Footer-2 {
+    padding: 1rem;
+    height: 54px;
+}
+
+}
+
+@media screen and (max-width: 418px) {
+    .FooterText-2 {
+     font-size: 10px;
+    }
+
+    .Footer-2 {
+    padding: 1rem;
+    height: 51px;
+}
+
 }
 
 
 
-
-
-
-
-
-
   </style>
-
-
 
 
 </head>
@@ -444,7 +528,6 @@ body {
 
 
                 
-
             <div class="navbar">
     <div class="menus-icon" id="menus-icon" onclick="toggleMenu()">
         <div class="bar" id="bar1"></div>
@@ -453,11 +536,9 @@ body {
     </div>
     <div class="menus" id="menus">
         <div class="texts">
-            <!-- Your menu items will go here -->
             <a href="#Home-Section" class="Home">Home</a>
             <a href="#Experience-Section" class="Mission">Mission</a>
             <a href="#Contact me-Section" class="Contact">Contact</a>
-            <!-- Add more items as needed -->
         </div>
     </div>
 </div>
@@ -467,14 +548,47 @@ body {
 
 
 <script>
-   
-  function toggleMenu() {
-  var menuIcon = document.getElementById("menus-icon");
-  var menu = document.getElementById("menus");
-  
-  menuIcon.classList.toggle("active");
-  menu.classList.toggle("active");
+ // Function to toggle menu and menu icon
+function toggleMenu() {
+    var menuIcon = document.getElementById("menus-icon");
+    var menu = document.getElementById("menus");
+
+    // Toggle the "active" class on the menu and menu icon
+    menu.classList.toggle("active");
+    menuIcon.classList.toggle("active");
+
 }
+
+// Smooth scroll function
+function scrollToSection(id) {
+    var section = document.getElementById(id);
+    if (section) {
+        // Scroll to the section smoothly
+        section.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+}
+
+window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+
+    // Determine which section is currently visible
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+        var top = section.offsetTop - 100; // Adjust 100 as needed
+        var bottom = top + section.offsetHeight;
+        var id = section.id;
+
+        setTimeout(function() {
+                var menuIcon = document.getElementById("menus-icon");
+                var menu = document.getElementById("menus");
+                menuIcon.classList.remove("active");
+                menu.classList.remove("active");
+            },);
+    });
+});
+
 
 
   </script>
@@ -707,6 +821,18 @@ Are you passionate about making a real difference through technology? Do you thr
             <p class="mission-statement">Join us in our mission to make life easier through technology!</p>
         </div>
     </footer>
+
+
+
+    <footer class="Footer-2">
+        <div class="container">
+          <div class="row ">
+            <div class="FooterText-2"  >
+              <p>Copyright 2024 © Technology For Mankind. All Rights Reserved </p>
+            </div>
+          </div>
+        </div>
+      </footer>
         
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
