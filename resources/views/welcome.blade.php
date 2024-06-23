@@ -16,7 +16,6 @@
 
 
 body {
-      margin: 0;
       font-family: Arial, sans-serif;
     }
 
@@ -141,6 +140,7 @@ body {
 .header {
   background-color: white;
   width: auto;
+  z-index: 10000;
 }
 
 .box-sizing
@@ -422,7 +422,7 @@ body {
 }
 
 .texts {
-        top: 39px;
+        top: 40.9px;
         background-color: #eefbff;
         position: absolute;
         bottom: 21px;
@@ -526,6 +526,10 @@ body {
     height: 51px;
 }
 
+.content-section {
+            margin-top: 200vh; /* Push the mission section down */
+        }
+
 }
 
 
@@ -540,8 +544,7 @@ body {
 </head>
 
 
-<body> 
-    <header class="bg-white" style="width: 100%; position:fixed; z-index: 1;">
+ <header class="bg-white" style="width: 100%; position:fixed; z-index: 1;">
         <div class="row header">
             <div class="col-9 col-md-6 p-3 ps-5">
                 
@@ -568,7 +571,7 @@ body {
     <div class="menus" id="menus">
         <div class="texts">
             <a href="#Home-Section" class="Home">Home</a>
-            <a href="#Experience-Section" class="Mission">Mission</a>
+            <a href="#Mission" class="Mission">Mission</a>
             <a href="#Contact me-Section" class="Contact">Contact</a>
         </div>
     </div>
@@ -578,49 +581,84 @@ body {
 
 
 
+
+
 <script>
- // Function to toggle menu and menu icon
+ 
 function toggleMenu() {
     var menuIcon = document.getElementById("menus-icon");
     var menu = document.getElementById("menus");
 
-    // Toggle the "active" class on the menu and menu icon
+    
     menu.classList.toggle("active");
     menuIcon.classList.toggle("active");
 
 }
 
-// Smooth scroll function
+
 function scrollToSection(id) {
     var section = document.getElementById(id);
     if (section) {
-        // Scroll to the section smoothly
+        
         section.scrollIntoView({
             behavior: 'smooth'
         });
     }
 }
 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
 window.addEventListener('scroll', function() {
-    var scrollPosition = window.scrollY;
-
-    // Determine which section is currently visible
-    var sections = document.querySelectorAll('section');
-    sections.forEach(function(section) {
-        var top = section.offsetTop - 100; // Adjust 100 as needed
-        var bottom = top + section.offsetHeight;
-        var id = section.id;
-
-        setTimeout(function() {
-                var menuIcon = document.getElementById("menus-icon");
-                var menu = document.getElementById("menus");
-                menuIcon.classList.remove("active");
-                menu.classList.remove("active");
-            },);
-    });
+    var menuIcon = document.getElementById("menus-icon");
+    var menu = document.getElementById("menus");
+    menuIcon.classList.remove("active");
+    menu.classList.remove("active");
 });
 
 
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+
+document.querySelector('.Mission').addEventListener('click', function(e) {
+    e.preventDefault(); 
+
+    const targetId = this.getAttribute('href'); 
+    const targetElement = document.querySelector(targetId); 
+
+    if (targetElement) {
+        const offset = 100; 
+        const targetPosition = targetElement.offsetTop - offset;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth' 
+        });
+    }
+});
 
   </script>
 
@@ -628,46 +666,13 @@ window.addEventListener('scroll', function() {
 
 
 
-
- <!--  <nav class="navbar navbar-expand-lg bg-aliceblue">
-                <div class="container-fluid">
-                    <button class="navbar-toggler navbar  ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-    <a class="nav-link active" style="color: black;" aria-current="page" href="#Home-Section">Home</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" style="color:  black;" href="#Experience-Section">Mission</a>
-</li>
-<li class="nav-item">
-    <a class="nav-link" style="color:  black;" href="#Contact me-Section">Contact</a>
-</li>
-
-                        </ul>
-                    </div>
-                </div>
-              </nav>   -->
-
-                
-              
-
-
-
-
-
-
-
-
-
-
-              
             </div>
         </div>
     </header>
 
+
+<body> 
+   
     <section id="Home-Section" style="padding-top: 5em;">
     <div class="bg-hero-image">
         <video autoplay muted loop>
@@ -678,27 +683,35 @@ window.addEventListener('scroll', function() {
             <h1>Welcome to T4MK</h1>
             <h2>Transforming Lives Through Technology</h2>
             <p>At T4MK, we believe in the power of technology to make life easier and better for everyone. Our mission is to harness existing technologies and innovate new solutions that simplify daily tasks, enhance productivity, and improve the overall quality of life.</p>
-            <button onclick="scrollToSection()">Join Our Mission</button>
+            <button id="scrollButton">Join Our Mission</button>
         </div>
     </div>
 </section>
 
   
 
-  <script>
-   
-    function scrollToSection() {
-      const section = document.getElementById('Experience-Section');
-      const sectionPosition = section.getBoundingClientRect().top;
-      const offset = window.pageYOffset;
-      const scrollPosition = sectionPosition + offset;
-      
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'smooth'
-      });
-    }
-  </script>
+<script>
+        function scrollToSection() {
+            const targetId = '#Mission'; // Target the Mission section by its ID
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                const offset = 100;
+                const targetPosition = targetElement.offsetTop - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        document.getElementById('scrollButton').addEventListener('click', function(e) {
+            e.preventDefault();
+            scrollToSection();
+        });
+    </script>
+
 
 
 
@@ -706,19 +719,15 @@ window.addEventListener('scroll', function() {
 
 <div class="container">
 
-<h3>Join Us in Our Mission</h3>
+<h3 id="Mission">Join Us in Our Mission </h3>
 
 <p>
 Are you passionate about making a real difference through technology? Do you thrive in a dynamic, innovative environment? We are always on the lookout for talented individuals who share our vision. If you're ready to be part of something bigger, we want to hear from you!
-</p>
+</p >
 
-</div>
+</div >
 
 </section>
-
-
-
-
 
 
 
@@ -760,12 +769,12 @@ Are you passionate about making a real difference through technology? Do you thr
 
 
 
-<div class="row custom-padding-top">
+<div class="row custom-padding-top" >
 
 
 
 
-<div class="col-md-6">
+<div class="col-md-6" >
     <div class="card">
     <img src="{{ asset('Cutting-Edge Technology.png') }}" 
        class="card-img-top" alt="" >
