@@ -21,17 +21,49 @@ body {
     }
 
     .bg-hero-image {
-    background: url("{{ asset('technology.jpg') }}");
-    background-size: cover; /* Ensures the background image covers the entire container */
-    height: 95vh; /* Sets the height of the container to 100% of the viewport height */
+    position: relative;
+    height: 95vh; /* Sets the height of the container to 95% of the viewport height */
     width: 100%; /* Ensures the container fills the viewport width */
+    overflow: hidden; /* Prevents content from overflowing the container */
+    display: flex; /* Use Flexbox layout */
     justify-content: center; /* Centers items horizontally */
     align-items: center; /* Centers items vertically */
-    overflow: hidden; /* Prevents content from overflowing the container */
-    position: relative;
-    left: 5px;
-    --bs-gutter-x: 0rem;
-    margin-left:-5px;
+    --bs-gutter-x: 0rem; /* Custom Bootstrap gutter */
+}
+
+.bg-hero-image video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* Ensures the video covers the entire container */
+}
+
+.hero-content {
+    position: sticky;
+    color: white; /* Text color for visibility */
+    text-align: center; /* Centers the text */
+    padding: 1em;
+}
+
+.hero-content button {
+    margin-top: 1em;
+    padding: 0.5em 2em;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.hero-content button:hover {
+    background-color: #0056b3;
 }
 
 
@@ -109,7 +141,6 @@ body {
 .header {
   background-color: white;
   width: auto;
-   
 }
 
 .box-sizing
@@ -365,18 +396,18 @@ body {
 
     .Home {
   top: 10px;
-  left: 38px;
-  color: white;
+  left: 46px;
 }
+
 
 .Mission {
   top: 50px;
-  left: 34px;
+  left: 42px;
 }
 
 .Contact {
   top: 90px;
-  left: 34px;
+  left: 42px;
 }
 
 .navbar {
@@ -393,9 +424,6 @@ body {
 .texts {
         top: 39px;
         background-color: #eefbff;
-        padding: 6px;
-        border: 5px solid #ffffff;
-        border-radius: 0px;
         position: absolute;
         bottom: 21px;
         right: -20px;
@@ -404,9 +432,9 @@ body {
     }
 
 
-  
-
 }
+
+
 
 .menus-icon.active #bar1 {
   transform: rotate(45deg) translate(6px, 7px);
@@ -459,8 +487,7 @@ body {
 .FooterText-2 {
     text-align: center;
     color: black;
-    font-size: 16px; /* Default font size */
-    padding-top: 3px;
+    font-size: 20px;
     font-weight: 600;
 }
 
@@ -500,6 +527,10 @@ body {
 }
 
 }
+
+
+
+
 
 
 
@@ -638,16 +669,20 @@ window.addEventListener('scroll', function() {
     </header>
 
     <section id="Home-Section" style="padding-top: 5em;">
-    <div class="row align-items-center bg-hero-image">
-      <div class="col text-center text-white hero-content">
-        <h1>Welcome to T4MK</h1>
-        <h2>Transforming Lives Through Technology</h2>
-        <p>At T4MK, we believe in the power of technology to make life easier and better for everyone. Our mission is to harness existing technologies and innovate new solutions that simplify daily tasks, enhance productivity, and improve the overall quality of life.</p>
-        <button onclick="scrollToSection()">Join Our Mission</button>
-      </div>
-      </div>
+    <div class="bg-hero-image">
+        <video autoplay muted loop>
+            <source src="{{ asset('background.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="hero-content">
+            <h1>Welcome to T4MK</h1>
+            <h2>Transforming Lives Through Technology</h2>
+            <p>At T4MK, we believe in the power of technology to make life easier and better for everyone. Our mission is to harness existing technologies and innovate new solutions that simplify daily tasks, enhance productivity, and improve the overall quality of life.</p>
+            <button onclick="scrollToSection()">Join Our Mission</button>
+        </div>
     </div>
-  </section>
+</section>
+
   
 
   <script>
