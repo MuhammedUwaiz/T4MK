@@ -526,10 +526,6 @@ body {
     height: 51px;
 }
 
-.content-section {
-            margin-top: 200vh; /* Push the mission section down */
-        }
-
 }
 
 
@@ -621,12 +617,21 @@ function scrollToSection(id) {
 <script>
 
 window.addEventListener('scroll', function() {
-    var menuIcon = document.getElementById("menus-icon");
-    var menu = document.getElementById("menus");
-    menuIcon.classList.remove("active");
-    menu.classList.remove("active");
-});
+   
+    var sections = document.querySelectorAll('section');
+    sections.forEach(function(section) {
+        var top = section.offsetTop - 100; 
+        var bottom = top + section.offsetHeight;
+        var id = section.id;
 
+        setTimeout(function() {
+                var menuIcon = document.getElementById("menus-icon");
+                var menu = document.getElementById("menus");
+                menuIcon.classList.remove("active");
+                menu.classList.remove("active");
+            },);
+    });
+});
 
 </script>
 
